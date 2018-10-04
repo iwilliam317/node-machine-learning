@@ -13,7 +13,8 @@ network.train([
     { input: {r: 1, g: 0.42, b: 0.52}, output: { dark: 1 } },
   ]);
 
-const result = network.run({ r: 0, g: 1, b: 0.65 });
+// const result = network.run({ r: 0, g: 1, b: 0.65 });
+const result = brain.likely({ r: 0, g: 1, b: 0.65 }, network);
 console.group('Probabilities');
 console.log(result);
 console.groupEnd();
