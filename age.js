@@ -15,10 +15,13 @@ network.train([
   { input: { age: 13 }, output: { teenage: 1 } },
   ]);
 
-const adultProbability = network.run({ age: 22}); 
-const childProbability = network.run({ age: 4}); 
+// const adultProbability = network.run({ age: 22}); 
+// const childProbability = network.run({ age: 4}); 
+
+const adultProbability = brain.likely({ age: 22}, network); 
+const childProbability = brain.likely({ age: 4}, network); 
 
 console.group('Probabilities - Based on entries provided!');
-console.log(`Age: 22 => ${adultProbability.adult}`);
-console.log(`Age: 4 => ${childProbability.child}`);
+console.log(`Age: 22 => ${adultProbability}`);
+console.log(`Age: 4 => ${childProbability}`);
 console.groupEnd();
