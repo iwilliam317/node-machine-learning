@@ -12,7 +12,8 @@ network.train([
   { input: { height: 175, weight: 60 }, output: { under: 1 } }
 ]);
 
-const normalProbability = network.run({ height: 175, weight: 80 }); 
+// const normalProbability = network.run({ height: 175, weight: 80 }); 
+const normalProbability = brain.likely({ height: 175, weight: 80 }, network);
 
 console.groupCollapsed('Probabilities');
 console.log(normalProbability);
